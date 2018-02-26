@@ -73,6 +73,13 @@ public abstract class AbstractPacket {
 	}
 
 	/**
+	 * Send the current packet to all online players.
+	 */
+	public void broadcastPacket() {
+		ProtocolLibrary.getProtocolManager().broadcastServerPacket(getHandle());
+	}
+
+	/**
 	 * Simulate receiving the current packet from the given sender.
 	 * 
 	 * @param sender - the sender.
